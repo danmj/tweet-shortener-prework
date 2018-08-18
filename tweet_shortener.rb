@@ -11,6 +11,7 @@ def dictionary
 "and" => "&"
     }
 end
+
 def word_substituter(tweet)
     tweet.split.collect do |word|
     keys = dictionary.keys.flatten.join(",").split(",")
@@ -26,6 +27,7 @@ def word_substituter(tweet)
         end
   end.join(" ")
 end
+
  def bulk_tweet_shortener(array)
   array.each{|each_array| puts word_substituter(each_array)}
 end
