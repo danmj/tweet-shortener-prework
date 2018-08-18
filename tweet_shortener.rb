@@ -14,16 +14,16 @@ end
 
 
 def word_substituter(tweet)
-    tweet.split.collect do |word|
-    keys = dictionary.keys.flatten.join(",").split(",")
-    low_case = word.downcase
-        if keys.include?(low_case) && low_case == "for" || low_case == "four"
-            word = dictionary[["for, four"]]
-        elsif keys.include?(low_case) && low_case == "to" || low_case == "two" || low_case == "too"
-            word = dictionary[["to, two, too"]]
-        elsif keys.include?(low_case)
-            word = dictionary[low_case]
-        else
+  tweet.split.collect do |word|
+  keys = dictionary.keys.flatten.join(",").split(",")
+  low_case = word.downcase
+  if keys.include?(low_case) && low_case == "for" || low_case == "four"
+      word = dictionary[["for, four"]]
+      elsif keys.include?(low_case) && low_case == "to" || low_case == "two" || low_case == "too"
+          word = dictionary[["to, two, too"]]
+      elsif keys.include?(low_case)
+          word = dictionary[low_case]
+      else
             word
         end
   end.join(" ")
