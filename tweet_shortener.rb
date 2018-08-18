@@ -24,8 +24,8 @@ def word_substituter(tweet)
       elsif keys.include?(low_case)
           word = dictionary[low_case]
       else
-            word
-        end
+          word
+      end
   end.join(" ")
 end
 
